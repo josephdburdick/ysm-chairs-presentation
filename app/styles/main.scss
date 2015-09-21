@@ -1,0 +1,21 @@
+$icon-font-path: '../fonts/';
+
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+#site-mock{
+  position: relative;
+  background:url(../images/ym_d_homepage.png) top center no-repeat;
+  background-size: contain;
+  width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+  min-height: 2317px;
+}
+.container{
+  background: rgba(red, .25%);
+  width: 100%;
+  max-width: 1366px;
+  min-height: 2317px;
+}
