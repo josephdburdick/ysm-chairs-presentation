@@ -105,11 +105,6 @@ gulp.task('extras', () => {
   }).pipe(gulp.dest('dist'));
 });
 
-gulp.task('copyHTML', () => {
-  return gulp.src('app/index.html')
-    .pipe(gulp.dest('dist'));
-});
-
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
 gulp.task('serve', ['styles', 'scripts', 'fonts'], () => {
@@ -183,8 +178,9 @@ gulp.task('wiredep', () => {
 gulp.task('scripts', function () {
   return gulp.src(`app/scripts/**/*.js`)
     .pipe($.plumber())
-    .pipe($.babel())
     .pipe($.sourcemaps.init())
+    .pipe($.babel())
+    .pipe(gulp.dest(`dist/scripts`))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest(`.tmp/scripts`));
 });
