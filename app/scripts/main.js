@@ -1,4 +1,7 @@
+/*global $:false */
+
 $(function(){
+  "use strict";
   var
     $video = $('#demo-video'),
     $body = $('body');
