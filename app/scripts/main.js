@@ -1,26 +1,26 @@
 /*global $:false */
 
-$(function(){
+$(() => {
   'use strict';
-  var
+  let
     $video = $('#demo-video'),
     $body = $('body');
     $video
-      .on('mouseenter', function(){
+      .on('mouseenter', () => {
         $video.get(0).play();
       })
-      .on('mouseleave', function(){
+      .on('mouseleave', () => {
         $video.get(0).pause();
         $video.get(0).currentTime = 0;
       })
-      .on('click', function(e){
+      .on('click', (e) => {
         e.preventDefault();
-        var fullScreenVideoURL = this.dataset.fullscreenvideo;
+        let fullScreenVideoURL = this.dataset.fullscreenvideo;
 
         if (!$body.find('#video-fullscreen').length){
           $body.append('<div id="video-fullscreen"><video><source></source></video></div>');
         }
-        var $fullScreenVideoContainer = $('#video-fullscreen'),
+        let $fullScreenVideoContainer = $('#video-fullscreen'),
             $fullScreenVideo = $fullScreenVideoContainer.find('video');
 
         $fullScreenVideo
