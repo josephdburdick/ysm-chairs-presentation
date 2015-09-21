@@ -12,7 +12,7 @@ $(() => {
       })
       .on('click', (e) => {
         e.preventDefault();
-        let fullScreenVideoURL = this.dataset.fullscreenvideo;
+        let fullScreenVideoURL = e.currentTarget.dataset.fullscreenvideo;
 
         if (!$body.find('#video-fullscreen').length){
           $body.append('<div id="video-fullscreen"><video><source></source></video></div>');
@@ -36,5 +36,3 @@ $(() => {
         }
       });
 });
-
- 
