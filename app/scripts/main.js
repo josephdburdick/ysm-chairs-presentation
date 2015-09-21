@@ -34,5 +34,18 @@ $(() => {
         } else if ($fullScreenVideo.get(0).webkitRequestFullscreen) {
           $fullScreenVideo.get(0).webkitRequestFullscreen();
         }
+
+        $fullScreenVideo.on('webkitfullscreenchange mozfullscreenchange fullscreenchange', function(e) {
+          var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
+          var event = state ? 'FullscreenOn' : 'FullscreenOff';
+          if (event === "FullscreenOff"){
+            $fullScreenVideo.get(0).pause();
+            $fullScreenVideo.get(0).currentTime = 0;
+            $fullScreenVideo = null;
+            $('#video-fullscreen').remove();
+          }
+
+        });
+
       });
 });
