@@ -203,5 +203,5 @@ gulp.task('default', ['clean'], () => {
 
 gulp.task('deploy', () => {
   return gulp.src('./dist/**/*')
-    .pipe($.ghPages());
+    .pipe($.ghPages({remoteUrl: 'git@github.com:josephdburdick/ysm-chairs-presentation'}));
 });
