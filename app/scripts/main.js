@@ -1,9 +1,6 @@
-/*global $:false */
-
+/*global $:false*/
 $(() => {
-  'use strict';
-  let
-    $video = $('#demo-video'),
+  let $video = $('#demo-video'),
     $body = $('body');
     $video
       .on('mouseenter', () => {
@@ -38,5 +35,6 @@ $(() => {
           $fullScreenVideo.get(0).webkitRequestFullscreen();
         }
       });
-
 });
+
+ 

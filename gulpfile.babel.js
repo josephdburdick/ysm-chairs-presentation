@@ -26,6 +26,7 @@ gulp.task('styles', () => {
 function lint(files, options) {
   return () => {
     return gulp.src(files)
+      .pipe($.babel())
       .pipe(reload({stream: true, once: true}))
       .pipe($.eslint(options))
       .pipe($.eslint.format())
@@ -41,12 +42,12 @@ const testLintOptions = {
 gulp.task('lint', lint('app/scripts/**/*.js'));
 gulp.task('lint:test', lint('test/spec/**/*.js', testLintOptions));
 
-gulp.task('html', ['styles'], () => {
+gulp.task('html', ['styles','scripts'], () => {
   const assets = $.useref.assets({searchPath: ['.tmp', 'app', '.']});
 
   return gulp.src('app/*.html')
     .pipe(assets)
-    .pipe($.if('*.js', $.uglify()))
+    // .pipe($.if('*.js', $.babel())) //$.uglify()))
     .pipe($.if('*.css', $.minifyCss({compatibility: '*'})))
     .pipe(assets.restore())
     .pipe($.useref())
@@ -102,6 +103,11 @@ gulp.task('extras', () => {
   ], {
     dot: true
   }).pipe(gulp.dest('dist'));
+});
+
+gulp.task('copyHTML', () => {
+  return gulp.src('app/index.html')
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
@@ -173,8 +179,21 @@ gulp.task('wiredep', () => {
     }))
     .pipe(gulp.dest('app'));
 });
+gulp.task('scripts', function () {
+  return gulp.src(`app/scripts/**/*.js`)
+    .pipe($.plumber())
+    .pipe($.babel())
+    .pipe($.sourcemaps.init())
+    .pipe($.sourcemaps.write('.'))
+    .pipe(gulp.dest(`.tmp/scripts`));
+});
 
-gulp.task('build', ['lint', 'html', 'images', 'videos', 'fonts', 'extras'], () => {
+gulp.task('copyJStoDist', ['transpile'], () => {
+  return gulp.src(`.tmp/scripts/*.js`)
+    .pipe(gulp.dest(`dist/scripts/`));
+});
+
+gulp.task('build', ['html', 'images', 'videos', 'fonts', 'extras'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
