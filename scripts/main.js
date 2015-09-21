@@ -23,7 +23,6 @@ $(function () {
       src: fullScreenVideoURL,
       type: 'video/mp4'
     });
-    $fullScreenVideo.get(0).play();
 
     if ($fullScreenVideo.get(0).requestFullscreen) {
       $fullScreenVideo.get(0).requestFullscreen();
@@ -36,6 +35,9 @@ $(function () {
     $fullScreenVideo.on('webkitfullscreenchange mozfullscreenchange fullscreenchange', function (e) {
       var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
       var event = state ? 'FullscreenOn' : 'FullscreenOff';
+      if (event === "FullscreenOn") {
+        $fullScreenVideo.get(0).play();
+      }
       if (event === "FullscreenOff") {
         $fullScreenVideo.get(0).pause();
         $fullScreenVideo.get(0).currentTime = 0;
@@ -68,7 +70,6 @@ $(function () {
       src: fullScreenVideoURL,
       type: 'video/mp4'
     });
-    $fullScreenVideo.get(0).play();
 
     if ($fullScreenVideo.get(0).requestFullscreen) {
       $fullScreenVideo.get(0).requestFullscreen();
@@ -81,6 +82,9 @@ $(function () {
     $fullScreenVideo.on('webkitfullscreenchange mozfullscreenchange fullscreenchange', function (e) {
       var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
       var event = state ? 'FullscreenOn' : 'FullscreenOff';
+      if (event === "FullscreenOn") {
+        $fullScreenVideo.get(0).play();
+      }
       if (event === "FullscreenOff") {
         $fullScreenVideo.get(0).pause();
         $fullScreenVideo.get(0).currentTime = 0;
