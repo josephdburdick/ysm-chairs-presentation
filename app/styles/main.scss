@@ -71,11 +71,12 @@ video {
 }
 .row-feature--16x9-video{
   @extend .row;
+  display: flex;
   .col-primary{
     width: 60.355555%;
   }
   .col-secondary{
-    width: 39.5555555%;
+    width: auto;
   }
 }
 .col-feature{
