@@ -112,7 +112,7 @@ gulp.task('copyHTML', () => {
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
-gulp.task('serve', ['styles', 'fonts'], () => {
+gulp.task('serve', ['styles', 'scripts', 'fonts'], () => {
   browserSync({
     notify: false,
     port: 9000,
@@ -132,6 +132,7 @@ gulp.task('serve', ['styles', 'fonts'], () => {
     '.tmp/fonts/**/*'
   ]).on('change', reload);
 
+  gulp.watch('app/styles/**/*.js', ['scripts']);
   gulp.watch('app/styles/**/*.scss', ['styles']);
   gulp.watch('app/fonts/**/*', ['fonts']);
   gulp.watch('bower.json', ['wiredep', 'fonts']);
@@ -188,12 +189,7 @@ gulp.task('scripts', function () {
     .pipe(gulp.dest(`.tmp/scripts`));
 });
 
-gulp.task('copyJStoDist', ['transpile'], () => {
-  return gulp.src(`.tmp/scripts/*.js`)
-    .pipe(gulp.dest(`dist/scripts/`));
-});
-
-gulp.task('build', ['html', 'images', 'videos', 'fonts', 'extras'], () => {
+gulp.task('build', ['styles', 'html', 'images', 'videos', 'fonts', 'extras'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
