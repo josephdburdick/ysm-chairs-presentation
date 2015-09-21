@@ -29,20 +29,54 @@
 
 
     <div id="site-mock">
-      <div class="container">
-        <div id="video-placement">
-          <div class="embed-container">
-            <a href="#full-screen" data-fullscreenVideo="videos/ROBERT-DILLON0-9_18_15-homepage-1_XL.mp4" class="display-block">
-              <video>
-                <source src="videos/ROBERT-DILLON-9_18_15-homepage-1.mp4" type="video/mp4">
-              </video>
-            </a>
+      <div class="container row-padding--bottom">
+        <div class="row">
+          <div class="col-xs-24">
+            <img class="fluid-image" src="images/ym_header.jpg" alt="">
+          </div>
+        </div>
+        <div class="row-padded--bottom row-feature--16x9-video">
+          <div class="col-primary">
+            <div class="embed-container">
+              <a class="display-block">
+                <video id="demo-video" loop muted data-fullscreenVideo="videos/ROBERT-DILLON0-9_18_15-homepage-1_XL.mp4">
+                  <source src="videos/ROBERT-DILLON-9_18_15-homepage-1.mp4" type="video/mp4">
+                </video>
+                <div class="overlay position-absolute--bottom text-center" style="margin-bottom:20px;">
+                  <img class="" src="images/video-overlay.png">
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-secondary">
+            <div class="row">
+              <div class="col-xs-12"><img class="fluid-image" src="images/ym_box1.jpg" alt=""></div>
+              <div class="col-xs-12"><img class="fluid-image" src="images/ym_box2.jpg" alt=""></div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12"><img class="fluid-image" src="images/ym_box3.jpg" alt=""></div>
+              <div class="col-xs-12"><img class="fluid-image" src="images/ym_box4.jpg" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-24">
+            <img src="images/ym_body.jpg" class="fluid-image" alt="">
           </div>
         </div>
       </div>
     </div>
 
-
+    <!-- Modal fullscreen -->
+    <div class="modal modal-fullscreen fade" id="modal-fullscreen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <video id="demo-modal-video" loop muted controls>
+            <source src="videos/ROBERT-DILLON0-9_18_15-homepage-1_XL.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

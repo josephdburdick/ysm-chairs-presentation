@@ -1,4 +1,7 @@
 $icon-font-path: '../fonts/';
+$screen-lg:	1366px;
+$grid-gutter-width: 6px;
+$grid-columns: 24;
 
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
@@ -6,16 +9,75 @@ $icon-font-path: '../fonts/';
 
 #site-mock{
   position: relative;
-  background:url(../images/ym_d_homepage.png) top center no-repeat;
-  background-size: contain;
+  // background:url(../images/ym_home_16_chairs-02.png) top center no-repeat;
+  // background-size: contain;
   width: 100%;
   max-width: 1366px;
   margin: 0 auto;
   min-height: 2317px;
 }
 .container{
-  background: rgba(red, .25%);
   width: 100%;
   max-width: 1366px;
   min-height: 2317px;
+  padding: 0;
+}
+
+#video-placement{
+  padding: 0 $grid-gutter-width/2
+}
+.embed-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+}
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+video {
+  width: 100%    !important;
+  height: auto   !important;
+}
+.force-percentage{
+  width: 57.133333%;
+}
+.position-absolute--bottom{
+  position: absolute;
+  bottom:0;
+  left: 0;
+  right: 0;
+}
+.demo-header{
+  margin-bottom: $grid-gutter-width;
+}
+.fluid-image{
+  width: 100%;
+  height: auto;
+}
+.row-padding--bottom, .row-padded--bottom{
+  [class^="col-"]{
+    padding-bottom: $grid-gutter-width;
+  }
+}
+[class^="col-"]{
+  float: left;
+  padding: 0 $grid-gutter-width/2;
+}
+.row-feature--16x9-video{
+  @extend .row;
+  .col-primary{
+    width: 60.355555%;
+  }
+  .col-secondary{
+    width: 39.5555555%;
+  }
+}
+.col-feature{
+  width: 60%;
 }
