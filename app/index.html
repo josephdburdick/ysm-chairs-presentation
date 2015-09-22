@@ -38,7 +38,7 @@
         <div class="row-padded--bottom row-feature--16x9-video">
           <div class="col-primary">
             <div class="embed-container">
-              <video style="cursor:pointer" id="demo-video" loop muted data-fullscreenVideo="http://www.yale-preview.adoptive.co/videos/ROBERT-DILLON-9_18_15_full.mp4">
+              <video style="cursor:pointer" id="demo-video" loop muted data-toggle="modal" data-target="#videoModal" data-fullScreenYoutube="https://www.youtube.com/embed/JlYWd8A6D48">
                 <source src="videos/ROBERT-DILLON-9_18_15-homepage-1.mp4" type="video/mp4">
               </video>
               <div class="overlay position-absolute--bottom text-center" style="padding:30px;">
@@ -64,6 +64,13 @@
         </div>
       </div>
     </div>
+
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+      <div class="embed-container">
+        <iframe width="100%" height="350" src="" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>

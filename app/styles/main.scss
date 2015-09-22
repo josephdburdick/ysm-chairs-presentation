@@ -44,9 +44,7 @@ video {
   width: 100%    !important;
   height: auto   !important;
 }
-.force-percentage{
-  width: 57.133333%;
-}
+
 .position-absolute--bottom{
   position: absolute;
   bottom:0;
@@ -79,4 +77,22 @@ video {
   .col-secondary{
     width: auto;
   }
+}
+
+#videoModal{
+  .close{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    opacity: .85;
+    color: white;
+    font-size: 200%;
+    z-index: 999;
+    &:hover{
+      opacity: 1;
+    }
+  }
+}
+.modal-open #videoModal{
+  overflow: hidden;
 }
