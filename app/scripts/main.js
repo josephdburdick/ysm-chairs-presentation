@@ -28,14 +28,14 @@ $(() => {
 
 
 
-    // $video
-    //   .on('mouseenter', () => {
-    //     $video.get(0).play();
-    //   })
-    //   .on('mouseleave', () => {
-    //     $video.get(0).pause();
-    //     $video.get(0).currentTime = 0;
-    //   })
+    $video
+      .on('mouseenter', () => {
+        $video.get(0).play();
+      })
+      .on('mouseleave', () => {
+        $video.get(0).pause();
+        $video.get(0).currentTime = 0;
+      });
     //   .on('click', (e) => {
     //     e.preventDefault();
     //
