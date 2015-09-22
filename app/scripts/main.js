@@ -13,7 +13,6 @@ $(() => {
             theModal = _this.data("target"),
             videoSRC = _this.attr("data-fullscreenyoutube"),
             videoSRCauto = videoSRC + "?rel=0&controls=0&showinfo=0&autoplay=1";
-
         $(theModal + ' iframe').attr('src', videoSRCauto);
 
         $(theModal + ' button.close').click(()  =>{
