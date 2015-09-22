@@ -15,7 +15,6 @@ $(function () {
           theModal = _this.data("target"),
           videoSRC = _this.attr("data-fullscreenyoutube"),
           videoSRCauto = videoSRC + "?rel=0&controls=0&showinfo=0&autoplay=1";
-
       $(theModal + ' iframe').attr('src', videoSRCauto);
 
       $(theModal + ' button.close').click(function () {
@@ -28,14 +27,12 @@ $(function () {
     });
   }
 
-  // $video
-  //   .on('mouseenter', () => {
-  //     $video.get(0).play();
-  //   })
-  //   .on('mouseleave', () => {
-  //     $video.get(0).pause();
-  //     $video.get(0).currentTime = 0;
-  //   })
+  $video.on('mouseenter', function () {
+    $video.get(0).play();
+  }).on('mouseleave', function () {
+    $video.get(0).pause();
+    $video.get(0).currentTime = 0;
+  });
   //   .on('click', (e) => {
   //     e.preventDefault();
   //
@@ -93,7 +90,6 @@ $(function () {
           theModal = _this.data("target"),
           videoSRC = _this.attr("data-fullscreenyoutube"),
           videoSRCauto = videoSRC + "?rel=0&controls=0&showinfo=0&autoplay=1";
-
       $(theModal + ' iframe').attr('src', videoSRCauto);
 
       $(theModal + ' button.close').click(function () {
@@ -106,14 +102,12 @@ $(function () {
     });
   }
 
-  // $video
-  //   .on('mouseenter', () => {
-  //     $video.get(0).play();
-  //   })
-  //   .on('mouseleave', () => {
-  //     $video.get(0).pause();
-  //     $video.get(0).currentTime = 0;
-  //   })
+  $video.on('mouseenter', function () {
+    $video.get(0).play();
+  }).on('mouseleave', function () {
+    $video.get(0).pause();
+    $video.get(0).currentTime = 0;
+  });
   //   .on('click', (e) => {
   //     e.preventDefault();
   //
