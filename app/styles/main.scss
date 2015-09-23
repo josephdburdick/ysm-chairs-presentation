@@ -7,6 +7,12 @@ $grid-columns: 24;
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+input, button, form{
+  outline: none;
+ border: none !important;
+ box-shadow: none !important;
+}
+
 #site-mock{
   position: relative;
   // background:url(../images/ym_home_16_chairs-02.png) top center no-repeat;
@@ -93,18 +99,21 @@ video {
 }
 
 #videoModal{
+  border: 0;
   .embed-container iframe{
     width: 100vw;
     height: 100vh;
+    border: 0;
   }
   .close{
     position: absolute;
     top: 15px;
     right: 15px;
-    opacity: .85;
+    opacity: .35;
     color: white;
     font-size: 200%;
     z-index: 999;
+    text-shadow: none;
     &:hover{
       opacity: 1;
     }
@@ -116,21 +125,14 @@ video {
 .modal-open #videoModal{
   overflow: hidden;
 }
-@keyframes BLINKING-CURSOR {
-  $blinkingBorderColor: #3386c7;
-  0%   { border-right-color: rgba($blinkingBorderColor, 0); }
-  50% { border-right-color: rgba($blinkingBorderColor, 1); }
-  100% { border-right-color: rgba($blinkingBorderColor, 0); }
-}
+
 .blinking-cursor--container{
   display: block;
   position: absolute;
   left: 0;
-  top: 8.5vw;
-  width: 9vw;
-  height: 4.6vw;
+  top: 9.5vw;
+  width: 9.1vw;
+  height: 2.4vw;
   box-sizing: content-box;
-  border-right: .5vw solid;
-  animation: BLINKING-CURSOR 1s infinite;
-
+  border-right: .1vw solid #fff;
 }
